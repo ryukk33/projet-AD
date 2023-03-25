@@ -45,12 +45,8 @@ New-DnsServerPrimaryZone -Name "evil.labo" -ZoneFile "evil.labo.dns" -DynamicUpd
 
 New-DhcpServerv4Scope -Name "evil.labo" -StartRange "192.168.100.10" -EndRange "192.168.100.180" -SubnetMask "255.255.255.0" -Gateway "192.168.100.254" -LeaseDuration "1.00:00:00" -ScopeId "1" -Confirm:$false
 
-Add-DnsServerResourceRecordA -Name "srv-1" -ZoneName "evil.labo" -IPv4Address "192.168.100.251" -Ttl 3600
-Add-DnsServerResourceRecordA -Name "srv-2" -ZoneName "evil.labo" -IPv4Address "192.168.100.252" -Ttl 3600
-Add-DnsServerResourceRecordA -Name "srv-3" -ZoneName "evil.labo" -IPv4Address "192.168.100.254" -Ttl 3600
-
-New-DhcpServerv4Reservation -ComputerName "srv-1" -ScopeId "1" -IPAddress "192.168.100.251" -Description "srv-1" -Confirm:$false
-New-DhcpServerv4Reservation -ComputerName "srv-2" -ScopeId "1" -IPAddress "192.168.100.252" -Description "srv-2" -Confirm:$false
-New-DhcpServerv4Reservation -ComputerName "srv-3" -ScopeId "1" -IPAddress "192.168.100.254" -Description "srv-3" -Confirm:$false
+Add-DnsServerResourceRecordA -Name "srv-1" -ZoneName "evil.labo" -IPv4Address "192.168.100.251"
+Add-DnsServerResourceRecordA -Name "srv-2" -ZoneName "evil.labo" -IPv4Address "192.168.100.252" 
+Add-DnsServerResourceRecordA -Name "srv-3" -ZoneName "evil.labo" -IPv4Address "192.168.100.254"
 
 Rename-Computer -NewName "srv-1" -Restart -Force
