@@ -12,7 +12,7 @@ Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 Install-WindowsFeature -Name DNS -IncludeManagementTools
 Install-WindowsFeature -Name DHCP -IncludeManagementTools
 
-Install-ADDSForest -DomainName evil.labo -DomainNetbiosName evil -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "azerty" -Force) -Force
+Install-ADDSForest -DomainName evil.labo -DomainNetbiosName evil -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "Passw0rd123@Célasécuritéééé" -Force) -Force
 
 New-ADOrganizationalUnit -Name "Direction" -Path "DC=evil,DC=labo"
 New-ADOrganizationalUnit -Name "Pedagogie" -Path "DC=evil,DC=labo"
