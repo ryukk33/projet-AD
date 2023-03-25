@@ -9,11 +9,6 @@ $nic | New-NetIPAddress -IPAddress $ip -PrefixLength 24 -DefaultGateway $gw
 $nic | Set-DnsClientServerAddress -ServerAddresses $dns
 
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
-Install-WindowsFeature -Name RSAT-AD-PowerShell
-Install-WindowsFeature -Name RSAT-ADDS
-Install-WindowsFeature -Name RSAT-DNS-Server
-Install-WindowsFeature -Name RSAT-DHCP-Server
-
 Install-WindowsFeature -Name DNS -IncludeManagementTools
 Install-WindowsFeature -Name DHCP -IncludeManagementTools
 
