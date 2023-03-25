@@ -1,4 +1,13 @@
 
+$ip = "192.168.100.251"
+$mask = "255.255.255.0"
+$gw = "192.168.100.254"
+$dns = "192.168.100.251"
+$nic = Get-NetAdapter -Name "Ethernet"
+$nic | Set-NetIPInterface -Dhcp Disabled
+$nic | New-NetIPAddress -IPAddress $ip -PrefixLength 24 -DefaultGateway $gw
+$nic | Set-DnsClientServerAddress -ServerAddresses $dns
+
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 Install-WindowsFeature -Name RSAT-AD-PowerShell
 Install-WindowsFeature -Name RSAT-ADDS
