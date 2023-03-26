@@ -100,7 +100,8 @@ Add-ADGroupMember -Identity "Auditeurs 2" -Members "Auditeur31","Auditeur32","Au
 
 Add-DnsServerPrimaryZone -Name "evil.labo" -ZoneFile "evil.labo.dns" -DynamicUpdate "Secure" -Reverse $true -MasterServers "srv-1.evil.labo" -ReplicationScope "Forest" -AllowUpdate $true -AllowTransfer $true -AllowQuery $true -AllowRecursion $true -AllowZoneTransfer $true -Confirm:$false
 
-Add-DhcpServerv4Scope -Name "evil.labo" -StartRange "192.168.100.10" -EndRange "192.168.100.180" -SubnetMask "255.255.255.0" -Gateway "192.168.100.254" -LeaseDuration "1.00:00:00" -ScopeId "1" -Confirm:$false
+Add-DhcpServerv4Scope -Name "evil.labo" -StartRange "192.168.100.10" -EndRange "192.168.100.180" -SubnetMask "255.255.255.0" -LeaseDuration "1.00:00:00" -ScopeId "1" -Confirm:$false
+Set-DhcpServerv4OptionDefinition -OptionId 3 -DefaultValue 192.168.100.254
 
 Add-DnsServerResourceRecordA -Name "srv-1" -ZoneName "evil.labo" -IPv4Address "192.168.100.251"
 Add-DnsServerResourceRecordA -Name "srv-2" -ZoneName "evil.labo" -IPv4Address "192.168.100.252"
