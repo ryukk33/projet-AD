@@ -13,5 +13,3 @@ Install-WindowsFeature -Name DNS -IncludeManagementTools
 Install-WindowsFeature -Name DHCP -IncludeManagementTools
 
 Install-ADDSForest -DomainName evil.labo -DomainNetbiosName evil -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "Passw0rd@123" -Force) -Force
-
-Rename-Computer -NewName "srv-1" -Restart -Force
