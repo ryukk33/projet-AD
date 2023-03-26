@@ -1,12 +1,12 @@
 # Create the first GPO to deny users from installing or removing printers
 $gpo1 = New-GPO -Name "Printer Restrictions"
-New-GPPermissions -Guid $gpo1.Id -TargetName "Authenticated Users" -TargetType Group -PermissionLevel GpoApply -Inherited Yes
+Set-GPPermissions -Guid $gpo1.Id -TargetName "Authenticated Users" -TargetType Group -PermissionLevel GpoApply -Inherited Yes
 Set-GPRegistryValue -Guid $gpo1.Id -Key "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoAddPrinter" -Type DWORD -Value 1
 Set-GPRegistryValue -Guid $gpo1.Id -Key "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoDeletePrinter" -Type DWORD -Value 1
 
 # Create the second GPO to deny users from changing the wallpaper
 $gpo2 = New-GPO -Name "Wallpaper Restrictions"
-New-GPPermissions -Guid $gpo2.Id -TargetName "Authenticated Users" -TargetType Group -PermissionLevel GpoApply -Inherited Yes
+Set-GPPermissions -Guid $gpo2.Id -TargetName "Authenticated Users" -TargetType Group -PermissionLevel GpoApply -Inherited Yes
 Set-GPRegistryValue -Guid $gpo2.Id -Key "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" -ValueName "Wallpaper" -Type String -Value "C:\Windows\Web\Wallpaper\Windows\img0.jpg"
 Set-GPRegistryValue -Guid $gpo2.Id -Key "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" -ValueName "WallpaperStyle" -Type String -Value "0"
 
