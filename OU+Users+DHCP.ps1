@@ -5,17 +5,17 @@ New-ADOrganizationalUnit -Name "Intervenants" -Path "DC=evil,DC=labo"
 New-ADOrganizationalUnit -Name "Auditeurs 1" -Path "DC=evil,DC=labo"
 New-ADOrganizationalUnit -Name "Auditeurs 2" -Path "DC=evil,DC=labo"
 
-New-ADUser -Name "Rick" -GivenName "Rick" -Surname "Sanchez" -SamAccountName "Rick" -UserPrincipalName "Rick" -Path "OU=Direction,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "azerty" -Force) -Enabled $true
-New-ADUser -Name "Morty" -GivenName "Morty" -Surname "Smith" -SamAccountName "Morty" -UserPrincipalName "Morty" -Path "OU=Direction,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "azerty" -Force) -Enabled $true
-New-ADUser -Name "Summer" -GivenName "Summer" -Surname "Smith" -SamAccountName "Summer" -UserPrincipalName "Summer" -Path "OU=Direction,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "azerty" -Force) -Enabled $true
+New-ADUser -Name "Rick" -GivenName "Rick" -Surname "Sanchez" -SamAccountName "Rick" -UserPrincipalName "Rick" -Path "OU=Direction,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "Password@123" -Force) -Enabled $true
+New-ADUser -Name "Morty" -GivenName "Morty" -Surname "Smith" -SamAccountName "Morty" -UserPrincipalName "Morty" -Path "OU=Direction,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "Password@123" -Force) -Enabled $true
+New-ADUser -Name "Summer" -GivenName "Summer" -Surname "Smith" -SamAccountName "Summer" -UserPrincipalName "Summer" -Path "OU=Direction,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "Password@123" -Force) -Enabled $true
 
-New-ADUser -Name "Franck" -GivenName "Franck" -Surname "Nicolas" -SamAccountName "Franck" -UserPrincipalName "Franck" -Path "OU=Pedagogie,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "azerty" -Force) -Enabled $true
-New-ADUser -Name "Nicolas" -GivenName "Nicolas" -Surname "Nicolas" -SamAccountName "Nicolas" -UserPrincipalName "Nicolas" -Path "OU=Pedagogie,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "azerty" -Force) -Enabled $true
-New-ADUser -Name "Jean" -GivenName "Jean" -Surname "Jean" -SamAccountName "Jean" -UserPrincipalName "Jean" -Path "OU=Pedagogie,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "azerty" -Force) -Enabled $true
+New-ADUser -Name "Franck" -GivenName "Franck" -Surname "Nicolas" -SamAccountName "Franck" -UserPrincipalName "Franck" -Path "OU=Pedagogie,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "Password@123" -Force) -Enabled $true
+New-ADUser -Name "Nicolas" -GivenName "Nicolas" -Surname "Nicolas" -SamAccountName "Nicolas" -UserPrincipalName "Nicolas" -Path "OU=Pedagogie,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "Password@123" -Force) -Enabled $true
+New-ADUser -Name "Jean" -GivenName "Jean" -Surname "Jean" -SamAccountName "Jean" -UserPrincipalName "Jean" -Path "OU=Pedagogie,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "Password@123" -Force) -Enabled $true
 
-New-ADUser -Name "Romain" -GivenName "Romain" -Surname "Hugues" -SamAccountName "Romain" -UserPrincipalName "Romain" -Path "OU=Administratif,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "azerty" -Force) -Enabled $true
-New-ADUser -Name "Hugues" -GivenName "Hugues" -Surname "Hugues" -SamAccountName "Hugues" -UserPrincipalName "Hugues" -Path "OU=Administratif,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "azerty" -Force) -Enabled $true
-New-ADUser -Name "Paul" -GivenName "Paul" -Surname "Paul" -SamAccountName "Paul" -UserPrincipalName "Paul" -Path "OU=Administratif,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "azerty" -Force) -Enabled $true
+New-ADUser -Name "Romain" -GivenName "Romain" -Surname "Hugues" -SamAccountName "Romain" -UserPrincipalName "Romain" -Path "OU=Administratif,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "Password@123" -Force) -Enabled $true
+New-ADUser -Name "Hugues" -GivenName "Hugues" -Surname "Hugues" -SamAccountName "Hugues" -UserPrincipalName "Hugues" -Path "OU=Administratif,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "Password@123" -Force) -Enabled $true
+New-ADUser -Name "Paul" -GivenName "Paul" -Surname "Paul" -SamAccountName "Paul" -UserPrincipalName "Paul" -Path "OU=Administratif,DC=evil,DC=labo" -AccountPassword (ConvertTo-SecureString -AsPlainText "Password@123" -Force) -Enabled $true
 
 New-ADGroup -Name "Intervenants" -GroupScope
 New-ADGroup -Name "Auditeurs 1" -GroupScope
