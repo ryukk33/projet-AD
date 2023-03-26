@@ -1,4 +1,4 @@
-Rename-Computer -NewName "srv-1"
+# a lancer a la main avant le script: Rename-Computer -NewName "srv-1" -Restart
 $ip = "192.168.100.251"
 $mask = "255.255.255.0"
 $gw = "192.168.100.254"
