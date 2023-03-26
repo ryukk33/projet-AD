@@ -1,4 +1,4 @@
-
+Rename-Computer -NewName "srv-1"
 $ip = "192.168.100.251"
 $mask = "255.255.255.0"
 $gw = "192.168.100.254"
@@ -12,6 +12,6 @@ Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 Install-WindowsFeature -Name DNS -IncludeManagementTools
 Install-WindowsFeature -Name DHCP -IncludeManagementTools
 
-Install-ADDSForest -DomainName evil.labo -DomainNetbiosName evil -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "Passw0rd123@Célasécuritéééé" -Force) -Force
+Install-ADDSForest -DomainName evil.labo -DomainNetbiosName evil -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "Passw0rd@123" -Force) -Force
 
 Rename-Computer -NewName "srv-1" -Restart -Force
